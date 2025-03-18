@@ -1,9 +1,9 @@
-- 👋 Hi, I’m @aksisnew
+#Hi! 
+- 👋 Hi, I’m **@aksisnew**
 - 👀 I’m interested in html,css,js,electronics,python
 - 😄 Pronouns: aks
-- ⚡ Fun fact: no fun facts
+- ⚡ Fun fact: hmmmmmm..
+  
+  ---
 
-<!---
-aksisnew/aksisnew is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+
