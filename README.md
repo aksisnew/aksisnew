@@ -15,9 +15,10 @@
   # Technologies
   - .
     # Libraries
-    -.
+    - Tailwind css
+    - React.js
     # Container technologies
-    -.
+    - Docker 
     
   ---
   
