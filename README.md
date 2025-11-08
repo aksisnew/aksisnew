@@ -24,3 +24,6 @@
   
 
 
+
+## Some little words from me 
+In life almost no one except one person is gonna fully support you so learn to be that person's fully . Not halfway Not casually Not in open.Some people just wanna see you earn but dont try to understand your feelings and what you really want to do . That person is not you !. 
