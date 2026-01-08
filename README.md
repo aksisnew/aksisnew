@@ -1,30 +1,45 @@
- # Hi! 
-- 👋 Hi, I’m **@aksisnew**
-- 👀 I’m interested in html,css,js,electronics,python
-- 😄 Pronouns: aks
-- ⚡ Fun fact: I add honey and cardamom to coffee and ya with tech videos ; )
+# Hi 👋 I’m Aks
 
-  # Languages
-  - Python
-  - js
-  - css,html
-  - c#
-# Also
-- electronics
+I’m **@aksisnew**, a developer focused on building clean, offline-friendly, and practical tech projects — mostly around the web, desktop apps, and electronics.
 
-  # Technologies
-  - .
-    # Libraries
-    - Tailwind css
-    - React.js
-    # Container technologies
-    - Docker 
-    
-  ---
-  
+---
 
+## 🧠 What I Work With
 
+### 💻 Software
+- **Electron.js**
+- **JavaScript / TypeScript**
+- **Node.js**
+- **HTML & CSS**
 
-## Some little words from me 
-In life almost no one except one person is gonna fully support you so learn to be that person's fully . Not halfway Not casually Not in open.Some people just wanna see you earn but dont try to understand your feelings and what you really want to do . That person is not you !. 
- And neither anything is meaningless in life nor anything really has any intrinsic value either everything is meaningless or everything is meaningful so, if someone says what you are doing is meaningless even if it is keep doing it don't listen!
+### 🔌 Electronics
+- **ESP32**
+- **Arduino development boards**
+
+---
+
+## 🧰 Libraries & Tools
+- **React.js**
+- **Tailwind CSS**
+- **Docker**
+
+---
+
+## ⚡ About Me
+- I enjoy building things that *actually work* rather than chasing trends  
+- I like minimal UI, offline-first apps, and system-level thinking  
+- Fun fact: I add **honey and cardamom to coffee** ☕ and watch tech videos for fun  
+
+---
+
+## 📝 A Thought I Live By
+> In life, very few people will fully support you —  
+> learn to be that person for yourself.  
+>
+> Not halfway. Not casually. Not for approval.  
+>
+> Some people only want to see results, not understand the process or your feelings.  
+> Don’t let that decide your direction.  
+>
+> Whether everything is meaningless or everything has meaning —  
+> keep building anyway.
