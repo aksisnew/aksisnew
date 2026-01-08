@@ -1,45 +1,107 @@
-# Hi 👋 I’m Aks
+<h1 align="center">Hi 👋 I’m Aks</h1>
 
-I’m **@aksisnew**, a developer focused on building clean, offline-friendly, and practical tech projects — mostly around the web, desktop apps, and electronics.
+<p align="center">
+<b>@aksisnew</b><br/>
+SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 
----
+</p>
 
-## 🧠 What I Work With
+<hr/>
 
-### 💻 Software
-- **Electron.js**
-- **JavaScript / TypeScript**
-- **Node.js**
-- **HTML & CSS**
+<table width="100%" cellspacing="0" cellpadding="12">
+<tr>
+<td bgcolor="#0f172a">
 
-### 🔌 Electronics
-- **ESP32**
-- **Arduino development boards**
+<h3>💻 Software Stack</h3>
+<ul>
+  <li>Electron.js</li>
+  <li>JavaScript / TypeScript</li>
+  <li>Node.js</li>
+  <li>Express.js</li>
+  <li>HTML &amp; CSS</li>
+</li>Python (full), numpy (full), pytorch (learning)</li>
+</ul>
 
----
+</td>
+</tr>
+</table>
 
-## 🧰 Libraries & Tools
-- **React.js**
-- **Tailwind CSS**
-- **Docker**
+<br/>
 
----
+<table width="100%" cellspacing="0" cellpadding="12">
+<tr>
+<td bgcolor="#064e3b">
 
-## ⚡ About Me
-- I enjoy building things that *actually work* rather than chasing trends  
-- I like minimal UI, offline-first apps, and system-level thinking  
-- Fun fact: I add **honey and cardamom to coffee** ☕ and watch tech videos for fun  
+<h3>🔌 Electronics</h3>
+<ul>
+  <li>ESP32</li>
+  <li>Arduino development boards</li>
+</ul>
 
----
+</td>
+</tr>
+</table>
 
-## 📝 A Thought I Live By
-> In life, very few people will fully support you —  
-> learn to be that person for yourself.  
->
-> Not halfway. Not casually. Not for approval.  
->
-> Some people only want to see results, not understand the process or your feelings.  
-> Don’t let that decide your direction.  
->
-> Whether everything is meaningless or everything has meaning —  
-> keep building anyway.
+<br/>
+
+<table width="100%" cellspacing="0" cellpadding="12">
+<tr>
+<td bgcolor="#1f2937">
+
+<h3>🧰 Libraries &amp; Tools</h3>
+<ul>
+  <li>React.js</li>
+  <li>Tailwind CSS</li>
+  <li>Docker</li>
+</ul>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table width="100%" cellspacing="0" cellpadding="12">
+<tr>
+<td bgcolor="#111827">
+
+<h3>⚡ About Me</h3>
+<ul>
+  <li>Intrests: homebrewing gadgets, singing, hardware , software, tech product blogging,building ui and ux</li>
+  <li>I belive design the software from backend to frontend. writing backend without sick frontend and calling a day is like turning on a computer with no monitor connected </li>
+  <li>Fun fact: I add <b>honey and cardamom</b> to coffee ☕ and watch tech videos for fun</li>
+</ul>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table width="100%" cellspacing="0" cellpadding="14">
+<tr>
+<td bgcolor="#020617">
+
+<h3>📝 A Thought I Live By</h3>
+<p>
+Very few people will fully support you in life.<br/>
+Learn to be that person for yourself.
+</p>
+
+<p>
+Not halfway. Not casually. Not for approval.
+</p>
+
+<p>
+Some people only care about results, not the process or your feelings.<br/>
+Don’t let that decide your direction.
+</p>
+
+<p>
+Whether everything is meaningless or everything has meaning —<br/>
+keep building anyway.
+</p>
+
+</td>
+</tr>
+</table>
