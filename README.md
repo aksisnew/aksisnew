@@ -19,7 +19,8 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
   <li>Node.js</li>
   <li>Express.js</li>
   <li>HTML &amp; CSS</li>
-</li>Python (full), numpy (full), pytorch (learning)</li>
+</li>Python (full), numpy (full), pytorch (learning), Django web development (learning)</li>
+  
 </ul>
 
 </td>
