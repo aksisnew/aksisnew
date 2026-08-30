@@ -34,7 +34,7 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 <tr>
 <td bgcolor="#064e3b">
 
-<h3>🔌 Electronics</h3>
+
 
 
 </td>
