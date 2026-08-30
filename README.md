@@ -18,8 +18,9 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
   <li>JavaScript / TypeScript</li>
   <li>Node.js</li>
   <li>Express.js</li>
+  <li>React.js , tailwind css, vite</li>
   <li>HTML &amp; CSS</li>
-</li>Python (full), numpy (full), pytorch (learning), Django web development (learning)</li>
+</li>Python (full), numpy (full), Django web development (learning)</li>
   
 </ul>
 
@@ -34,10 +35,7 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 <td bgcolor="#064e3b">
 
 <h3>🔌 Electronics</h3>
-<ul>
-  <li>ESP32</li>
-  <li>Arduino development boards</li>
-</ul>
+
 
 </td>
 </tr>
@@ -53,7 +51,7 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 <ul>
   <li>React.js</li>
   <li>Tailwind CSS</li>
-  <li>Docker</li>
+
 </ul>
 
 </td>
