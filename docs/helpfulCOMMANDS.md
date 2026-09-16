@@ -10,13 +10,36 @@
 <tr>
 <td bgcolor="#451a03">
 
-<h3>⚠️ CRITICAL CAUTION & DATA BACKUP WARNING</h3>
+<h3>⚠️ CRITICAL DISCLAIMER: USE AT YOUR OWN RISK</h3>
 <p>
-Before upgrading Node.js or modifying system packages, <b>always back up your active project files and database dumps</b>. System package upgrades can occasionally break native <code>node_modules</code> bindings.
+All commands, setups, and scripts provided in this repository are shared strictly for educational and personal workflow reference. <b>Proceed entirely at your own risk.</b>
 </p>
 <p>
-<i>Disclaimer:</i> Always maintain independent backups of your <code>$HOME</code> directory to prevent accidental data loss.
+Modifying system packages, running package updates, or executing storage commands can lead to unintended bugs, corrupted dependencies, broken environments, or unexpected system behavior. I take no responsibility for lost data, broken setups, or system instability caused by following these steps.
 </p>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table width="100%" cellspacing="0" cellpadding="14">
+<tr>
+<td bgcolor="#7f1d1d">
+
+<h3>🚨 DATA LOSS & ENVIRONMENT CORRUPTION WARNING</h3>
+<p>
+Major package upgrades (such as updating Node.js LTS versions) or clearing package caches can break native binary bindings inside your <code>node_modules</code> directory.
+</p>
+<p>
+<b>Important Precautions:</b>
+</p>
+<ul>
+  <li>Always push your code commits to remote Git repositories (e.g., GitHub, GitLab) before performing upgrades.</li>
+  <li>Back up important databases, local environment files (<code>.env</code>), and key configuration scripts independently.</li>
+  <li>Never run destructive file removal commands (e.g., <code>rm -rf</code>) without carefully double-checking the working directory path.</li>
+</ul>
 
 </td>
 </tr>
@@ -97,14 +120,18 @@ When a new major Node.js LTS release arrives in the Termux repositories, use one
 <td bgcolor="#3b0764">
 
 <h3>📦 Termux Environment Backup & Restore</h3>
-<p>
-Create tarball backups of your entire Termux installation so you can restore your setup instantly if anything breaks.
-</p>
 
-<p><b>Grant Storage Permissions to Termux</b></p>
+<p><b>Grant Storage Permissions</b></p>
 <pre><code>termux-setup-storage</code></pre>
 
-<p><b>Create Full Environment Backup (Saves to Internal Storage)</b></p>
+<p><b>⚠️ Caution when running <code>termux-setup-storage</code>:</b></p>
+<ul>
+  <li>Executing this command grants Termux full read/write access to your device's shared internal storage (<code>/sdcard</code>).</li>
+  <li>Be extremely cautious when running untrusted npm packages or scripts with lifecycle hooks (e.g., <code>postinstall</code>), as buggy or malicious scripts could alter or delete files on your phone's storage.</li>
+  <li>It is strongly advised to enable shared storage permissions only on a secondary, dedicated development device.</li>
+</ul>
+
+<p><b>Create Full Environment Backup (Saves to Shared Internal Storage)</b></p>
 <pre><code>tar -zcvf /sdcard/termux_dev_backup.tar.gz -C /data/data/com.termux/files home usr</code></pre>
 
 <p><b>Restore Full Environment Backup</b></p>
