@@ -28,6 +28,11 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 </tr>
 </table>
 
+<div>
+  <h2>My development device setup</h2>
+  [Read the inital setup](docs/initialSETUP.md)
+  
+</div>
 <br/>
 
 <table width="100%" cellspacing="0" cellpadding="12">
