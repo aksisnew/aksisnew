@@ -4,7 +4,8 @@
   <b>@aksisnew</b><br/>
   SINGER | TECH ENTHUSIAST | DEVELOPER
 </p>
-<p style="color:red"><b>Just trying to live the life I made up in my mind</b></p>
+<p><b>Just trying to live the life I made up in my mind</b></p>
+<p>Maybe the things you are angry <br>at in life right now may not be there one day and you will miss it like anything<br>. But if you are angry at it maybe you love it!</p>
 
 <hr/>
 
