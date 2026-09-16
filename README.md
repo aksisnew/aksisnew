@@ -33,9 +33,9 @@
 <ul>
   <li><a href="docs/initialSETUP.md">Read the initial setup</a></li>
   <li><a href="docs/coreTOOLS.md">Core tools installation guide</a></li>
-  <li><a href="docs/deviceSPECS.md">Device reliability</a></li>
+  <li><a href="docs/deviceRELIABILITY.md">Device reliability</a></li>
   
-  <li><a href="docs/deviceSPECS.md">Device hardware specifications</a></li>
+  <li><a href="docs/deviceSpecs.md">Device hardware specifications</a></li>
 </ul>
 
 <br/>
