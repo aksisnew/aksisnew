@@ -4,6 +4,7 @@
   <b>@aksisnew</b><br/>
   SINGER | TECH ENTHUSIAST | DEVELOPER
 </p>
+<p style="color:red"><b>Just trying to live the life I made up in my mind</b></p>
 
 <hr/>
 
