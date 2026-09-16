@@ -1,9 +1,8 @@
 <h1 align="center">Hi 👋 I’m Aks</h1>
 
 <p align="center">
-<b>@aksisnew</b><br/>
-SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
-
+  <b>@aksisnew</b><br/>
+  SINGER | TECH ENTHUSIAST | DEVELOPER
 </p>
 
 <hr/>
@@ -18,33 +17,22 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
   <li>JavaScript / TypeScript</li>
   <li>Node.js</li>
   <li>Express.js</li>
-  <li>React.js , tailwind css, vite</li>
+  <li>React.js, Tailwind CSS, Vite</li>
   <li>HTML &amp; CSS</li>
-</li>Python (full), numpy (full), Django web development (learning)</li>
-  
+  <li>Python (full), NumPy (full), Django web development (learning)</li>
 </ul>
 
 </td>
 </tr>
 </table>
 
-<div>
-  <h2>My development device setup</h2>
-  [Read the inital setup](docs/initialSETUP.md)
-  
-</div>
 <br/>
 
-<table width="100%" cellspacing="0" cellpadding="12">
-<tr>
-<td bgcolor="#064e3b">
+<h2>My development device setup</h2>
 
-
-
-
-</td>
-</tr>
-</table>
+<p>
+  <a href="docs/initialSETUP.md">Read the initial setup</a>
+</p>
 
 <br/>
 
@@ -56,7 +44,6 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 <ul>
   <li>React.js</li>
   <li>Tailwind CSS</li>
-
 </ul>
 
 </td>
@@ -71,40 +58,10 @@ SINGER | TECH ENTHUSIAST | DEVELOPER.<br/>
 
 <h3>⚡ About Me</h3>
 <ul>
-  <li>Intrests: homebrewing gadgets, singing, hardware , software, tech product blogging,building ui and ux</li>
-  <li>I belive design the software from backend to frontend. writing backend without sick frontend and calling a day is like turning on a computer with no monitor connected </li>
+  <li>Interests: Homebrewing gadgets, singing, hardware, software, tech product blogging, building UI/UX</li>
+  <li>I believe in designing software from backend to frontend. Writing backend without a sleek frontend and calling it a day is like turning on a computer with no monitor connected.</li>
   <li>Fun fact: I add <b>honey and cardamom</b> to coffee ☕ and watch tech videos for fun</li>
 </ul>
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-<table width="100%" cellspacing="0" cellpadding="14">
-<tr>
-<td bgcolor="#020617">
-
-<h3>📝 A Thought I Live By</h3>
-<p>
-Very few people will fully support you in life.<br/>
-Learn to be that person for yourself.
-</p>
-
-<p>
-Not halfway. Not casually. Not for approval.
-</p>
-
-<p>
-Some people only care about results, not the process or your feelings.<br/>
-Don’t let that decide your direction.
-</p>
-
-<p>
-Whether everything is meaningless or everything has meaning —<br/>
-keep building anyway.
-</p>
 
 </td>
 </tr>
