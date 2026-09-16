@@ -30,9 +30,12 @@
 
 <h2>My development device setup</h2>
 
-<p>
-  <a href="docs/initialSETUP.md">Read the initial setup</a>
-</p>
+<ul>
+  <li><a href="docs/initialSETUP.md">Read the initial setup</a></li>
+  <li><a href="docs/coreTOOLS.md">Core tools installation guide</a></li>
+  <li><a href="docs/deviceRELIABILITY.md">Device reliability</a></li>
+  <li><a href="docs/HOWTO.md">How to</a></li>
+</ul>
 
 <br/>
 
