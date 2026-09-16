@@ -26,6 +26,23 @@ The author takes no responsibility or liability for hardware damage, software br
 
 <table width="100%" cellspacing="0" cellpadding="14">
 <tr>
+<td bgcolor="#1e293b">
+
+<h3>🏷️ NO SPONSORSHIPS DISCLAIMER: PERSONALLY BOUGHT ITEMS</h3>
+<p>
+<b>Independent Hardware Ownership Notice:</b>
+<br/>
+There are <b>no sponsorships involved</b> in this setup or documentation. All hardware items, smartphones, and accessories mentioned herein were <b>personally bought</b> with private funds. No device manufacturers, brands, or software vendors have sponsored, endorsed, or influenced any part of this configuration or documentation.
+</p>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table width="100%" cellspacing="0" cellpadding="14">
+<tr>
 <td bgcolor="#7f1d1d">
 
 <h3>🚨 DATA LOSS & NO FULL PROTECTION DISCLAIMER</h3>
@@ -34,7 +51,7 @@ The author takes no responsibility or liability for hardware damage, software br
 </p>
 <ul>
   <li><b>No measure can fully protect your device:</b> Software-level device isolation, package minimization, and security boundaries reduce risk, but <b>no measure can fully protect</b> physical devices from hardware degradation, software vulnerabilities, network exploits, or physical loss.</li>
-  <li><b>Maintain independent off-device backups:</b> Always ensure critical project files, configurations, and data are routinely backed up off-device. Software environments and storage media are always subject to unexpected failure.</li>
+  <li><b>Maintain independent off-device backups:</b> Always ensure critical project files, configurations, and data are routinely backed up off-device. Software optimizations are not a substitute for proper external backups.</li>
 </ul>
 
 </td>
@@ -78,8 +95,20 @@ This is explicitly maintained as a secondary, non-sensitive device. For security
       <td>Samsung Galaxy A07 5G (SM-A076B)</td>
     </tr>
     <tr>
+      <td><b>Sponsorship Status</b></td>
+      <td><b>Personally Bought</b> (Zero sponsorships involved)</td>
+    </tr>
+    <tr>
       <td><b>Role</b></td>
       <td>Secondary (Termux CLI, Web Development, Experimental Tools)</td>
+    </tr>
+    <tr>
+      <td><b>Processor / SoC</b></td>
+      <td>Octa-Core 5G Mobile Processor</td>
+    </tr>
+    <tr>
+      <td><b>Display / Screen Size</b></td>
+      <td>~6.6-inch HD+ LCD Display</td>
     </tr>
     <tr>
       <td><b>RAM</b></td>
@@ -112,7 +141,7 @@ This is explicitly maintained as a secondary, non-sensitive device. For security
 
 <b>🚨 Hardware & Storage Caution:</b>
 <br/>
-With 4 GB RAM and 128 GB internal storage, heavy multi-threaded builds or massive package downloads can strain physical RAM and trigger swap operations, increasing UFS/eMMC write cycles. Keep the Termux environment minimal and pruned.
+With an entry-level octa-core processor, 4 GB RAM, and 128 GB internal storage, heavy multi-threaded builds or massive package downloads can strain physical RAM and trigger swap operations, increasing UFS/eMMC write cycles. Keep the Termux environment minimal and pruned. Remember, no setup can fully protect physical storage hardware from ultimate silicon wear.
 </td>
 </tr>
 </table>
@@ -158,8 +187,20 @@ This primary phone houses all security-sensitive apps, including 2FA authenticat
       <td>Samsung Galaxy F62</td>
     </tr>
     <tr>
+      <td><b>Sponsorship Status</b></td>
+      <td><b>Personally Bought</b> (Zero sponsorships involved)</td>
+    </tr>
+    <tr>
       <td><b>Role</b></td>
       <td>Primary (Personal, Authentication, Payments, Security-Sensitive Apps)</td>
+    </tr>
+    <tr>
+      <td><b>Processor / SoC</b></td>
+      <td>Exynos 9825 (7nm Octa-core: 2x Cheetah + 2x Cortex-A75 + 4x Cortex-A55)</td>
+    </tr>
+    <tr>
+      <td><b>Display / Screen Size</b></td>
+      <td>6.7-inch Super AMOLED+ Full HD+ (1080 x 2400 pixels) Display</td>
     </tr>
     <tr>
       <td><b>RAM</b></td>
@@ -167,7 +208,11 @@ This primary phone houses all security-sensitive apps, including 2FA authenticat
     </tr>
     <tr>
       <td><b>Internal Storage</b></td>
-      <td>128 GB Flash Storage</td>
+      <td>128 GB UFS Flash Storage</td>
+    </tr>
+    <tr>
+      <td><b>Battery Capacity</b></td>
+      <td>7,000 mAh</td>
     </tr>
     <tr>
       <td><b>Termux Installed?</b></td>
@@ -192,7 +237,7 @@ This primary phone houses all security-sensitive apps, including 2FA authenticat
 
 <b>🚨 Primary Security & Data Caution:</b>
 <br/>
-Even on a dedicated security-focused primary device with 8 GB RAM and 128 GB storage, software sandboxing and system updates <b>cannot fully protect</b> against sophisticated phishing, rogue app permissions, or physical device loss. Always keep system OS security patches updated and maintain multi-device 2FA backup methods.
+Even on a dedicated security-focused primary device with an Exynos 9825 chip, 8 GB RAM, and 128 GB storage, software sandboxing and system updates <b>cannot fully protect</b> against sophisticated phishing, rogue app permissions, or physical device loss. Always keep system OS security patches updated and maintain multi-device 2FA backup methods.
 </td>
 </tr>
 </table>
@@ -214,6 +259,7 @@ By physically separating developer CLI environments from primary security apps, 
 <ul>
   <li><b>Development Isolation:</b> Compromised packages, node modules, or script errors in Termux on the Galaxy A07 5G cannot access banking or authentication tokens because none exist on that physical hardware.</li>
   <li><b>Primary Hardening:</b> Keeping the Galaxy F62 free of terminal environments and experimental packages preserves standard OS security boundaries for critical financial apps.</li>
+  <li><b>Independence & Transparency:</b> Both devices are personally bought items with zero external funding or sponsorships.</li>
   <li><b>No Full Protection Guarantee:</b> Physical separation is an effective defensive layer, but remember that <b>no measure can fully protect</b> against zero-day exploits, hardware failure, or human error. Proceed entirely at your own risk.</li>
 </ul>
 
@@ -223,7 +269,7 @@ By physically separating developer CLI environments from primary security apps, 
 
 <b>⚠️ Final Disclaimer: Proceed At Your Own Risk:</b>
 <br/>
-Maintain off-site backups for both devices. Device separation is a behavioral security practice, not an absolute guarantee against data loss or unauthorized access. Use this configuration at your own risk.
+Maintain off-site backups for both devices. Device separation is a behavioral security practice, not an absolute guarantee against data loss or unauthorized access. Use this configuration entirely at your own risk.
 </td>
 </tr>
 </table>
