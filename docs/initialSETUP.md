@@ -15,6 +15,9 @@
 Please install the <b>Termux</b> application and its <b>Termux:X11</b> add-on only from a verified, up-to-date source (such as official GitHub releases or F-Droid). Avoid outdated builds (e.g., legacy Google Play Store versions).
 </p>
 <p>
+<b>Important:</b> Download sources and official maintainer channels may change over time. When reading this, please thoroughly verify and confirm the current, correct official sources to avoid downloading outdated builds, encountering unexpected issues, or introducing security risks.
+</p>
+<p>
 <i>Disclaimer:</i> I do not maintain Termux nor did I create it. I am simply a user sharing my setup.
 </p>
 
