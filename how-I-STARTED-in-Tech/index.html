@@ -1,1 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Journey in Tech</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --active-tab: #334155;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Screen 1: Password / Prompt Overlay */
+    #welcome-screen {
+      position: fixed;
+      inset: 0;
+      background-color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.8s ease, visibility 0.8s;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #welcome-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .prompt-card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .prompt-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .prompt-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-main);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+      text-align: center;
+    }
+
+    .input-box:focus {
+      border-color: var(--accent);
+    }
+
+    .hint {
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Main OS-style UI */
+    #app-container {
+      width: 100%;
+      max-width: 950px;
+      height: 650px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      overflow: hidden;
+    }
+
+    #app-container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Window Header */
+    .window-header {
+      background: rgba(15, 23, 42, 0.6);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .window-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* Layout */
+    .workspace {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: rgba(15, 23, 42, 0.4);
+      border-right: 1px solid var(--border);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      padding-left: 8px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .file-item:hover {
+      background: var(--accent-soft);
+      color: var(--text-main);
+    }
+
+    .file-item.active {
+      background: var(--active-tab);
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* Content Area */
+    .content-area {
+      flex: 1;
+      padding: 35px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .file-content {
+      display: none;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .file-content.active {
+      display: block;
+    }
+
+    .file-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .file-content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+
+    .file-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .file-content ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .file-content li {
+      margin-bottom: 8px;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 650px) {
+      .workspace {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        flex-direction: row;
+        overflow-x: auto;
+      }
+      .sidebar-title { display: none; }
+      .file-item { white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen 1: Password / Initial Prompt -->
+  <div id="welcome-screen">
+    <div class="prompt-card">
+      <div class="prompt-title">Welcome to My Journey ✨</div>
+      <div class="prompt-sub">Type the key to unlock my story</div>
+      <input type="text" id="passkey" class="input-box" placeholder="Type here..." autofocus>
+      <div class="hint">Hint: type <strong>lets start</strong> it's the key! 🗝️</div>
+    </div>
+  </div>
+
+  <!-- Screen 2: System Interface -->
+  <div id="app-container">
+    <div class="window-header">
+      <div class="window-title">personal-journey ~/ memories</div>
+      <div class="window-title" style="font-size: 0.75rem; opacity: 0.6;">v2.0</div>
+    </div>
+
+    <div class="workspace">
+      <!-- Sidebar Navigation -->
+      <div class="sidebar">
+        <div class="sidebar-title">Files</div>
+        <div class="file-item active" onclick="openFile('when-i-was-12')">
+          <span>📄</span> when i was 12.exe
+        </div>
+        <div class="file-item" onclick="openFile('when-i-was-13')">
+          <span>📄</span> when i was 13.exe
+        </div>
+        <div class="file-item" onclick="openFile('age-17')">
+          <span>📄</span> age 17.exe
+        </div>
+        <div class="file-item" onclick="openFile('age-18')">
+          <span>📄</span> age 18.exe
+        </div>
+        <div class="file-item" onclick="openFile('impnote')">
+          <span>📄</span> impnote.exe
+        </div>
+      </div>
+
+      <!-- Main Content Container -->
+      <div class="content-area">
+
+        <!-- File: when i was 12.exe -->
+        <div id="when-i-was-12" class="file-content active">
+          <h2>when i was 12.exe</h2>
+          <p>
+            It all started sitting in front of my old HP laptop with wide eyes and endless curiosity. 
+            I wasn't trying to build a big career or calculate future salaries—I was just mesmerized by the magic of making something out of nothing.
+          </p>
+          <p>
+            Watching lines of code transform into working tools, I fell in love with Python. It wasn't work; it was pure, simple wonder.
+          </p>
+
+          <h3>How to Learn Python (Without Becoming a Nerd 🐍)</h3>
+          <p>
+            Learning Python doesn't mean grinding textbook theory or memorizing dry math formulas. Here is how to keep it fun and natural:
+          </p>
+          <ul>
+            <li><strong>Build what you actually care about:</strong> Skip generic calculator tutorials. Build a bot to track your favorite music releases or automate an annoying task on your laptop.</li>
+            <li><strong>Learn by breaking things:</strong> Write 10 lines of code, run it, watch it break, and fix it. That's real learning.</li>
+            <li><strong>Don't memorize syntax:</strong> Real developers Google things every 5 minutes. Focus on understanding the logic; looking up syntax is totally fine.</li>
+            <li><strong>Keep sessions short:</strong> 30 minutes of creative tinkering beats 4 hours of forced reading every time.</li>
+          </ul>
+
+          <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">HP Laptop</span>
+            <span class="tag">First Curiosity</span>
+            <span class="tag">Fun Learning</span>
+          </div>
+        </div>
+
+        <!-- File: when i was 13.exe -->
+        <div id="when-i-was-13" class="file-content">
+          <h2>when i was 13.exe</h2>
+          <p>
+            At 13, I started tinkering with basic web technologies like HTML, CSS, and JavaScript. 
+            I worked on a fairly low-end setup with just a Python local server and no fancy backend.
+          </p>
+          <p>
+            I loved exploring Chromium APIs—playing with LocalStorage, IndexedDB, and learning how browsers really work under the hood. 
+            I kept practicing quietly, exploring libraries, and building my foundation all the way up through age 17.
+          </p>
+          <div class="tag-container">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">LocalStorage</span>
+            <span class="tag">IndexedDB</span>
+            <span class="tag">Python Local Server</span>
+          </div>
+        </div>
+
+        <!-- File: age 17.exe -->
+        <div id="age-17" class="file-content">
+          <h2>age 17.exe</h2>
+          <p>
+            When I turned 17, I took a step forward and learned Node.js. Technology started becoming a medium for my own feelings and creative expression.
+          </p>
+          <p>
+            I built my own song player app, and because I love singing, I created a studio-like voice recorder app to support my singing dreams. 
+          </p>
+          <p>
+            This was also the year I dove deep into AI and Machine Learning. I studied neural networks, artificial neurons, sigmoid perceptrons, and built models like Naive Bayes and standard Bayes models. I even made my own complete notebook PDF summarizing all my learnings in AI/ML.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Node.js</span>
+            <span class="tag">Music Player</span>
+            <span class="tag">Voice Recorder</span>
+            <span class="tag">Singing Dreams</span>
+            <span class="tag">AI & ML</span>
+            <span class="tag">Neural Networks</span>
+            <span class="tag">Perceptrons</span>
+            <span class="tag">Naive Bayes</span>
+            <span class="tag">Notes PDF</span>
+          </div>
+        </div>
+
+        <!-- File: age 18.exe -->
+        <div id="age-18" class="file-content">
+          <h2>age 18.exe</h2>
+          <p>
+            By 18, everything started connecting together. I stepped into modern full-stack web development.
+          </p>
+          <p>
+            I started building real, complete digital environments using modern frontend frameworks and fast bundlers like React, Vue, Svelte, Tailwind, Vite, and esbuild. On the Python side, I regularly used Flask, Django, NumPy, and Pandas.
+          </p>
+
+          <h3>The Full Manual: Migrating JS to TypeScript Painlessly 📘</h3>
+          <p>
+            Switching from JavaScript to TypeScript can feel overwhelming if you try to type everything at once. Here is the pragmatic, stress-free route:
+          </p>
+          <ul>
+            <li><strong>Step 1: Enable TS in your project.</strong> Add TypeScript and `@types/node` as dev dependencies, create a basic `tsconfig.json` file, and set `"allowJs": true`. This lets JS and TS live together side-by-side.</li>
+            <li><strong>Step 2: Rename `.js` to `.ts` one file at a time.</strong> Don't convert your entire project in a single night. Pick one simple utility file, change its extension, and fix any immediate syntax errors.</li>
+            <li><strong>Step 3: Embrace `any` when stuck.</strong> When TypeScript complains about a complex object and you don't want to break your flow, use `any` temporarily. You can refine the type later.</li>
+            <li><strong>Step 4: Type functions and API responses first.</strong> Give function parameters clear types and define interfaces for data coming from backend APIs. That gives you 80% of TypeScript's benefits with minimal effort.</li>
+            <li><strong>Step 5: Turn on strict mode slowly.</strong> Only when you feel comfortable should you set `"strict": true` in `tsconfig.json`. Don't force yourself into rigid rules on day one.</li>
+          </ul>
+
+          <div class="tag-container">
+            <span class="tag">React</span>
+            <span class="tag">Vue</span>
+            <span class="tag">Svelte</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">Vite</span>
+            <span class="tag">esbuild</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">JS to TS Migration</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Django</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+          </div>
+        </div>
+
+        <!-- File: impnote.exe -->
+        <div id="impnote" class="file-content">
+          <h2>impnote.exe</h2>
+          <p>
+            Tech was never about the paycheck for me. It was about connection—a way to build things that connect with people and express what I feel.
+          </p>
+          <p>
+            I don't like to be a strictly studious person or spend my whole life staring at a screen. I value having passions, creative outlets, and a real life outside of code.
+          </p>
+          <p>
+            For me, tech is emotional. It's the spark that keeps me excited, creative, and grounded.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Heart over Money</span>
+            <span class="tag">Human Connection</span>
+            <span class="tag">Balance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Unlock Screen Logic
+    const passkeyInput = document.getElementById('passkey');
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const appContainer = document.getElementById('app-container');
+
+    passkeyInput.addEventListener('input', (e) => {
+      const value = e.target.value.trim().toLowerCase();
+      if (value === 'lets start') {
+        welcomeScreen.classList.add('hidden');
+        appContainer.classList.add('visible');
+      }
+    });
+
+    // Sidebar File Switcher
+    function openFile(fileId) {
+      // Hide all contents
+      const contents = document.querySelectorAll('.file-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Remove active class from all tabs
+      const items = document.querySelectorAll('.file-item');
+      items.forEach(item => item.classList.remove('active'));
+
+      // Show selected content
+      document.getElementById(fileId).classList.add('active');
+
+      // Add active state to clicked tab
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
