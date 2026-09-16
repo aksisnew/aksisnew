@@ -73,6 +73,14 @@ Mobile flash storage (UFS / eMMC) uses NAND flash memory cells that endure a fin
 <h3>📦 2️⃣ Keeping a Lean System Environment</h3>
 <p>
 Maintaining a minimal package set drastically cuts down on unnecessary background writes, disk thrashing, and security attack vectors.
+  <br>
+  No measure can fully protect your system until you fully review everything on your own and with your understanding
+  <br> 
+  Please review everything before executing anything
+  <br>
+  A good thing would be to do this on a dedicated phone which is secondary and does not contain personal data though
+  <br>
+  other issues and things can do occur even then please review everything cautiously 
 </p>
 
 <p><b>Rule 1: Install Only Essential Packages</b></p>
